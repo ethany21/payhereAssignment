@@ -1,9 +1,7 @@
-from tokenize import String
-
 from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import declarative_base, relationship
 
-from config.Connection import engine
+from src.config.Connection import engine
 
 Base = declarative_base()
 Base.metadata.create_all(bind=engine)

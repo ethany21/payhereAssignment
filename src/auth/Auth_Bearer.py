@@ -1,20 +1,8 @@
-import logging
-
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi import Request, HTTPException
 from starlette import status
 
-from auth.Auth_Handler import decodeJWT
-
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
-
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
-# log 출력
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
-logger.addHandler(stream_handler)
+from src.auth.Auth_Handler import decodeJWT
 
 
 def verify_jwt(jwt_credentials: str) -> bool:
@@ -32,9 +20,6 @@ class JWTBearer(HTTPBearer):
 
     async def __call__(self, request: Request):
         credentials: HTTPAuthorizationCredentials = await super(JWTBearer, self).__call__(request)
-
-        logger.info(credentials)
-
         if credentials:
             if not credentials.scheme == "Bearer":
                 raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Invalid authentication scheme.")

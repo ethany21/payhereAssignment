@@ -1,9 +1,16 @@
+from typing import Optional
+
 from pydantic import BaseModel
 
 
-class RequestLedger(BaseModel):
+class RequestLedgerCreate(BaseModel):
     price: int
     memo: str
+
+
+class RequestLedgerUpdate(BaseModel):
+    price: Optional[int]
+    memo: Optional[str]
 
 
 class ResponseLedger(BaseModel):
