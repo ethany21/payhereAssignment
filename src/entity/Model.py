@@ -19,5 +19,5 @@ class Ledger(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     price = Column(Integer, nullable=False)
     memo = Column(String(120), nullable=False)
-    user_id = Column(Integer, ForeignKey("UserLogin.id"), nullable = False)
+    user_id = Column(Integer, ForeignKey("UserLogin.id"), nullable=False)
     user = relationship("UserLogin", backref="ledger_userLogin")
