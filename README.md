@@ -4,7 +4,7 @@
 1. git clone this repository
 2. pip install -r requirements.txt
 3. ddl.sql 파일로 table 생성
-4. uvicorn main:app --port 8000 --reload 명령어로 fastapi app 실행
+4. uvicorn src.main:app --port 8000 --reload 명령어로 fastapi app 실행
 5. 로컬 환경에서 test 가정 시, 인터넷 url에 http://localhost:8000/docs를 실행,
    fastapi swagger docs 화면에서 api를 test한다
 ```
