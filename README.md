@@ -18,9 +18,11 @@
 ### 실행:
 ```
 1. git clone this repository
-2. pip install -r requirements.txt
-3. uvicorn src.main:app --port 8000 --reload 명령어로 fastapi app 실행
-4. 로컬 환경에서 test 가정 시, 인터넷 url에 http://localhost:8000/docs를 실행,
+2. cd payhereAssignment
+3. (local의 다른 python 의존성과 충돌을 피하고 싶다면, virtualenv venv 후 가상환경을 생성한다)
+4. pip install -r requirements.txt
+5. uvicorn src.main:app --port 8000 --reload 명령어로 fastapi app 실행
+6. 로컬 환경에서 test 가정 시, 인터넷 url에 http://localhost:8000/docs를 실행,
    fastapi swagger docs 화면에서 api를 test한다
 ```
 
