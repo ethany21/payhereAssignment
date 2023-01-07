@@ -26,3 +26,4 @@ class UserLoginRepository(AppRepository):
         new_user = UserLogin(**user.dict())
         self.db.add(new_user)
         self.db.commit()
+        return new_user
