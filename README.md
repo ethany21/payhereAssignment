@@ -33,7 +33,8 @@ value안에 생성된 토큰을 입력하면 ledger api들을 사용할 수 있�
 
 2. ddl.sql 파일 하단의 dml insert 구문들은, 테스트 용으로 미리 생성한 것으로
    UserLogin 을 먼저 insert 한 후, Ledger insert를 실행할 것
-   (test 시, 새
+   (test 시, 새 계정을 생성하고 로그인 한 후 ledger를 생성하고 테스트 한다면 
+   insert 구문은 실행하지 않고 상단의 ddl 쿼리들만 실행하여 table을 생성하면 된다)
 
 3. 로그아웃 기능은, blacklist 방식으로 유효하지 않은 jwt 토큰을 
    따로 저장하는 logic을 구현하는 것이 많은 설계가 필요하여
